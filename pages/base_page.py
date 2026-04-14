@@ -10,28 +10,23 @@ class BasePage:
 
     def click(self, locator):
         element = self.wait.until(EC.presence_of_element_located(locator))
-        
-        # Scroll to element
+
+        # Scroll
         self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
-        
-        # Wait a bit for UI stabilization
-        self.wait.until(EC.element_to_be_clickable(locator))
-        
-        # Use JS click (FINAL FIX)
+
+        # JS click (FINAL)
         self.driver.execute_script("arguments[0].click();", element)
 
     def send_keys(self, locator, value):
         element = self.wait.until(EC.presence_of_element_located(locator))
-        
-        # Scroll into view
-        self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
-        
-        # Click before typing (very important)
-        element.click()
-        
-        element.clear()
-        element.send_keys(value)
 
-    def get_text(self, locator):
-        element = self.wait.until(EC.visibility_of_element_located(locator))
-        return element.text
+        # Scroll
+        self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
+
+        # Focus using JS (IMPORTANT)
+        self.driver.execute_script("arguments[0].focus();", element)
+
+        # Clear using JS (important fix)
+        self.driver.execute_script("arguments[0].value = '';", element)
+
+        element.send_keys(value)

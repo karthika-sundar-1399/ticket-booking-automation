@@ -1,4 +1,6 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC   # ✅ FIX
 from pages.base_page import BasePage
 
 
@@ -14,5 +16,11 @@ class SignupPage(BasePage):
         self.send_keys(self.NAME_INPUT, name)
         self.send_keys(self.EMAIL_INPUT, email)
         self.send_keys(self.PASSWORD_INPUT, password)
-        self.send_keys(self.CONFIRM_PASSWORD_INPUT, password)
+
+        # ✅ Confirm password using JS
+        confirm = self.wait.until(
+            EC.presence_of_element_located(self.CONFIRM_PASSWORD_INPUT)
+        )
+        self.driver.execute_script("arguments[0].value = arguments[1];", confirm, password)
+
         self.click(self.SIGNUP_BUTTON)
