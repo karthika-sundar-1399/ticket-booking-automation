@@ -1,0 +1,1 @@
+BASE_URL = "https://9659058568.pythonanywhere.com/"
