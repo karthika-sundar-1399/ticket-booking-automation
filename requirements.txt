@@ -1,31 +1,63 @@
+# Project dependencies file - lists all packages needed for ticket booking automation
+# Package management utility library for better package handling
 attrs==26.1.0
+# SSL/TLS certificates library for secure connections
 certifi==2026.2.25
+# C Foreign Function Interface library for calling C functions
 cffi==2.0.0
+# Character encoding library for handling different text encodings
 charset-normalizer==3.4.7
+# Cross-platform colored terminal output library
 colorama==0.4.6
+# HTTP/1.1 protocol implementation library
 h11==0.16.0
+# Internationalized domain names in applications library
 idna==3.11
+# INI file parser library for configuration files
 iniconfig==2.3.0
+# Template engine for generating dynamic text/HTML
 Jinja2==3.1.6
+# Safe string handling library for markup escaping
 MarkupSafe==3.0.3
+# Outcome library for managing test outcomes
 outcome==1.3.0.post0
+# Packaging utilities library for version handling
 packaging==26.0
+# Plugin management library for pytest
 pluggy==1.6.0
+# C parser library for parsing C code
 pycparser==3.0
+# Syntax highlighter library for code display
 Pygments==2.20.0
+# SOCKS proxy client library
 PySocks==1.7.1
+# Main testing framework for writing and running tests
 pytest==9.0.3
+# HTML report plugin for pytest to generate beautiful test reports
 pytest-html==4.2.0
+# Metadata plugin for pytest to capture test metadata
 pytest-metadata==3.1.1
+# Environment variable loader library from .env files
 python-dotenv==1.2.2
+# HTTP library for making HTTP requests
 requests==2.33.1
+# Browser automation library (main dependency) for controlling web browsers
 selenium==4.43.0
+# Async I/O library for handling async operations
 sniffio==1.3.1
+# Sorted container data structures library
 sortedcontainers==2.4.0
+# Async library for concurrent programming
 trio==0.33.0
+# WebSocket client library for WebSocket connections
 trio-websocket==0.12.2
+# Typing extensions library for additional type hints
 typing_extensions==4.15.0
+# URL parsing and manipulation library
 urllib3==2.6.3
+# Automated WebDriver manager library (downloads ChromeDriver automatically)
 webdriver-manager==4.0.2
+# WebSocket client library for WebSocket communications
 websocket-client==1.9.0
+# WebSocket protocol implementation library
 wsproto==1.3.2
